@@ -1,0 +1,11 @@
+#ApiObjectModel
+name: tokenhelper
+actions:
+  #ApiObjectMethodModel
+  getToken:
+    formalParam : ["corpid","corpsecret"]  # 形参
+    get: https://qyapi.weixin.qq.com/cgi-bin/gettoken
+    query:
+      corpid: ${corpid}
+      corpsecret: ${corpsecret}
+
