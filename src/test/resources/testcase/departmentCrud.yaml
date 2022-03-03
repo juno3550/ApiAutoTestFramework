@@ -1,0 +1,47 @@
+#ApiTestCaseModel
+name: departmentTestCase
+description: 部门增删改查
+steps:
+  - api: getToken
+    actualParameter: ["ww5ef451bf006ec894","EcEIog2OJ8AtO7PDaqt_yuVZS3NeYF3kcko9Vd6i9EE"]
+    saveGlobal:
+      accesstoken: access_token
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 0
+        reason: 'getToken错误码'
+      - actual: errcode
+        matcher: equalTo
+        expect: 1
+        reason: 'getToken错误码-人为制造断言失败'
+  - api: createDepartment
+    actualParameter: ["子部门02${getTimeStamp}","subDepartment02${getTimeStamp}"]
+    save:
+      departmentId: id
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 0
+        reason: '创建部门错误码'
+  - api: updateDepartment
+    actualParameter: ["${departmentId}","子部门03${getTimeStamp}","subDepartment03${getTimeStamp}"]
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 0
+        reason: '更新部门错误码'
+  - api: listDepartment
+    actualParameter: ["${departmentId}"]
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 0
+        reason: '查询部门错误码'
+  - api: deletDepartment
+    actualParameter: ["${departmentId}"]
+    asserts:
+      - actual: errcode
+        matcher: equalTo
+        expect: 0
+        reason: '删除部门错误码'

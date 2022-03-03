@@ -1,0 +1,11 @@
+# 更新部门
+name: updateDepartment
+formalParam: ["departmentId","name","name_en"]
+contentType: application/json
+body: '{
+             "id": ${departmentId},
+             "name": "${name}",
+             "name_en": "${name_en}",
+             "order": 1
+         }'
+post: https://qyapi.weixin.qq.com/cgi-bin/department/update?access_token=${accesstoken}

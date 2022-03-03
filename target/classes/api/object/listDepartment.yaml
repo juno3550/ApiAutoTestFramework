@@ -1,0 +1,6 @@
+# 查询所有部门
+name: listDepartment
+formalParam: ["departmentId"]
+query:
+  id: ${departmentId}
+get: https://qyapi.weixin.qq.com/cgi-bin/department/list?access_token=${accesstoken}
