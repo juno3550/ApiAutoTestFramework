@@ -11,6 +11,6 @@ import java.util.HashMap;
 @Slf4j
 public class TestStepResult {
 
-    private ArrayList<Executable> assertList;  // 存储一个step中的断言表达式（可能有多个）
+    private ArrayList<Executable> assertList;  // 存储一个测试步骤（step）中的断言表达式（可能有多个）
     private HashMap<String, String> stepVariables = new HashMap<>();  // 存储用例级别的变量（测试步骤间的变量传递）
 }

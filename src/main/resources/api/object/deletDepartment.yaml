@@ -1,6 +1,0 @@
-# 删除部门
-name: deletDepartment
-formalParam: ["departmentId"]
-query:
-  id: ${departmentId}
-post: https://qyapi.weixin.qq.com/cgi-bin/department/delete?access_token=${accesstoken}

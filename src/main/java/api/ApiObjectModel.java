@@ -38,6 +38,7 @@ public class ApiObjectModel {
     private HashMap<String,String> caseVariables = new HashMap<>();  // 存储用例级别的参数化
     private Response response;  // 响应对象
 
+    // 加载接口文件中的接口对象
     public static ApiObjectModel load(String path) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
         // 返回序列化后的对象
@@ -96,10 +97,7 @@ public class ApiObjectModel {
             requestSpecification.body(runBody);
         }
         response = requestSpecification.request(requestMethod, runUrl).
-                then().
-                    log().all().
-                    extract().
-                    response();
+                then().log().all().extract().response();
 
         return response;
     }

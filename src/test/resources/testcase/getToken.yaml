@@ -2,7 +2,7 @@
 name: getToken
 description: 获取Token
 steps:
-  - api: tokenhelper
+  - apiName: tokenhelper
     action: getToken
     actualParameter: ["ww5ef451bf006ec894","EcEIog2OJ8AtO7PDaqt_yuVZS3NeYF3kcko9Vd6i9EE"]
     saveGlobal:
