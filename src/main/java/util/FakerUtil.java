@@ -9,23 +9,14 @@ package util;
 import java.util.Random;
 
 /**
- * @version: V1.0
- * @author: kuohai
- * @className: FakerUtils
- * @packageName: com.autobots.utils.faker
- * @description: 数据伪造工具类
- * @data: 2019-11-27 下午4:17
+ * 数据伪造工具类
  **/
 public class FakerUtil {
     private final static int delta = 0x9fa5 - 0x4e00 + 1;
 
     /**
-     * @author: kuohai
-     * @methodsName: getRandomInt
-     * @description:
      * @param: [lengh] 获取的随机数的长度
      * @return: int 随机数
-     * @throws:
      */
     public static int getRandomInt(int lengh) {
 
@@ -37,11 +28,8 @@ public class FakerUtil {
     /**
      * @param min 获取的随机数左边界
      * @param max 获取的随机数右边界
-     * @author: kuohai
      * @methodsName: getRandomInt
-     * @description:
      * @return: int 随机数
-     * @throws:
      */
     public static int getRandomInt(int min, int max) {
 
@@ -51,21 +39,16 @@ public class FakerUtil {
 
     }
     /**
-     * @author:  kuohai
      * @methodsName: getTimeStamp
-     * @description:
      * @param:  []
      * @return: java.lang.String
-     * @throws:
      */
     public static String getTimeStamp(){
         return  String.valueOf(System.currentTimeMillis());
 
     }
     /**
-     * @author: kuohai
      * @methodsName: getNum
-     * @description:
      * @param: [start, end]
      * @return: int
      */
@@ -75,12 +58,10 @@ public class FakerUtil {
     }
 
     /**
-     * @author: kuohai
      * @methodsName: orderNo
      * @description:14位订单号生成器
      * @param: []
      * @return: java.lang.String
-     * @throws:
      */
     public static String orderNo() {
         String cardNo = "123456";
@@ -93,11 +74,9 @@ public class FakerUtil {
     /**
      * 电话号码生成器
      */
-
     private static String[] telFirst = "134,135,136,137,138,139,150,151,152,157,158,159,130,131,132,155,156,133,188,185,181".split(",");
 
     /**
-     * @author: kuohai
      * @methodsName: getTel
      * @description:
      * @return: java.lang.String
@@ -110,14 +89,10 @@ public class FakerUtil {
         return first + second + thrid;
     }
 
-
-
     /**
-     * @author: kuohai
      * @methodsName: getRandomHan
      * @description: 获取随机汉字
      * @return: char
-     * @throws:
      */
     public static char getRandomHan(int num) {
         Random ran = new Random();

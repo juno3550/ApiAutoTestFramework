@@ -39,6 +39,7 @@ public class TestStepModel {
         // 实参的占位符变量替换
         if (actualParameter!=null) {
             finalActualParameter.addAll(PlaceholderUtil.resolveList(actualParameter, testCaseVariables));
+            log.info("实参："+finalActualParameter.toString());
         }
         // 执行接口调用（ApiObject）
         Response response = ApiLoader.getApiObject(apiName).run(finalActualParameter);
