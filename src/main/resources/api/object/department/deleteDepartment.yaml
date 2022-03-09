@@ -1,5 +1,5 @@
 # 删除部门
-name: deletDepartment
+name: deleteDepartment
 formalParam: ["departmentId"]
 query:
   id: ${departmentId}

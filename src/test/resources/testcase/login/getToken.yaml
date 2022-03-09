@@ -1,14 +1,15 @@
 #ApiTestCaseModel
-name: getToken
+name: 获取Token
 description: 获取Token
+module: 登录模块
 steps:
-  - apiName: tokenhelper
-    action: getToken
+  - apiName: getToken
+    description: 获取 token
     actualParameter: ["ww5ef451bf006ec894","EcEIog2OJ8AtO7PDaqt_yuVZS3NeYF3kcko9Vd6i9EE"]
     saveGlobal:
       accesstoken: access_token
     asserts:
-      - actual: errcode
+      - key: errcode
         matcher: equalTo
         expect: 0
         reason: 'getToken错误码'

@@ -1,3 +1,5 @@
+package demo;
+
 import api.ApiObjectModel;
 import org.junit.jupiter.api.Test;
 

@@ -23,6 +23,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class TestStepModel {
 
     private String apiName;  // 接口名称
+    private String description;  // 步骤描述
     private ArrayList<String> actualParameter;  // 实参
     private HashMap<String, String> saveGlobal;  // 需要存储的全局变量（测试用例中的占位符变量）
     private HashMap<String, String> save;  // 需要存储的用例级别变量（测试用例中的占位符变量）
@@ -46,7 +47,8 @@ public class TestStepModel {
             save.forEach((variableName, path) -> {
                 String variableValue = response.path(path).toString();
                 stepVariable.put(variableName, variableValue);
-                log.info("步骤间临时变量更新：【"+variableName+": "+variableValue+"】");
+                log.info("用例变量更新：【"+variableName+": "+variableValue+"】");
+                log.info("当前用例变量：【"+stepVariable.toString()+"】");
             });
         }
         // 存储saveGlobal（全局变量）
@@ -55,6 +57,7 @@ public class TestStepModel {
                 String variableValue = response.path(path);
                 GlobalVariables.getGlobalVariables().put(variableName, variableValue);
                 log.info("全局变量更新：【"+variableName+": "+variableValue+"】");
+                log.info("当前全局变量：【"+GlobalVariables.getGlobalVariables().toString()+"】");
             });
         }
         // 存储断言结果

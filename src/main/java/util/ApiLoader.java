@@ -25,7 +25,7 @@ public class ApiLoader {
                 try {
                     apiObjectModels.add(ApiObjectModel.load(path.getAbsolutePath()));
                     log.info(String.format("接口对象文件读取成功【%s】", path));
-                    log.info(String.format("接口对象【%s】加载成功【%s】", apiObjectModels.get(apiObjectModels.size()-1).getName(), apiObjectModels.get(apiObjectModels.size()-1)));
+                    log.info(String.format("接口对象加载成功【%s】", apiObjectModels.get(apiObjectModels.size()-1).getName()));
                 } catch (IOException e) {
                     e.printStackTrace();
                     log.error(String.format("接口对象文件读取失败【%s】", path));

@@ -90,6 +90,42 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <!-- 解决allure测试报告中文乱码问题 -->
+        <aspectj.version>1.8.10</aspectj.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <build>
+        <plugins>
+            <!-- 该插件能够在运行后自动在target目录生成allure测试结果目录 -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <!-- 默认测试文件的命名规则：
+                            "**/Test*.java"
+                            "**/*Test.java"
+                            "**/*Tests.java"
+                            "**/*TestCase.java"
+                            如果现有测试文件不符合以上命名，可以在 pom.xml 添加自定义规则
+                        -->
+                        <include>**/**.java</include>
+                    </includes>
+                    <!-- 在target目录下自动生成原生的测试结果目录：/allure-results -->
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}/allure-results</value>
+                        </property>
+                        <property>
+                            <name>allure.link.issue.pattern</name>
+                            <value>https://example.org/issue/{}</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
