@@ -1,3 +1,4 @@
+# ApiObjectModel
 # 删除部门
 name: deleteDepartment
 formalParam: ["departmentId"]

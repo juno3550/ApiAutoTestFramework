@@ -15,10 +15,10 @@ import java.util.List;
 @Slf4j
 public class ApiLoader {
 
-    // 加载所有的接口对象（到内存中）
+    // 存储所有的接口对象（到内存中）
     private static List<ApiObjectModel> apiObjectModels = new ArrayList<>();
 
-    // 遍历dir目录下的所有接口对象（文件名）
+    // 遍历dir目录下的所有接口对象（文件）
     public static void load(String dir) {
         Arrays.stream(new File(dir).listFiles()).forEach(path -> {
             if(path.isFile()) {
@@ -37,7 +37,7 @@ public class ApiLoader {
         });
     }
 
-    // 获取接口对象
+    // 根据接口名称，获取接口对象
     public static ApiObjectModel getApiObject(String apiName){
         final ApiObjectModel[] finalApiObjectModel = {new ApiObjectModel()};
         apiObjectModels.forEach(apiObjectModel -> {

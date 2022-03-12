@@ -1,5 +1,6 @@
 package util;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,13 +10,12 @@ import java.util.Map;
 
 
 /**
- * 配置文件或模板中的占位符替换工具类
+ * 配置文件中的占位符替换工具类
  * Date: 15-5-8
  * Time: 下午4:12
  */
+@Slf4j
 public class PlaceholderUtil {
-    public static final Logger logger = LoggerFactory.getLogger(PlaceholderUtil.class);
-
 
     /**
      * Prefix for system property placeholders: "${"
@@ -59,10 +59,10 @@ public class PlaceholderUtil {
                         buf.replace(startIndex, endIndex + PLACEHOLDER_SUFFIX.length(), propVal);
                         nextIndex = startIndex + propVal.length();
                     } else {
-                        logger.info("Could not resolve placeholder '" + placeholder + "' in [" + text + "] ");
+                        log.info("Could not resolve placeholder '" + placeholder + "' in [" + text + "] ");
                     }
                 } catch (Exception ex) {
-                    logger.info("Could not resolve placeholder '" + placeholder + "' in [" + text + "]: " + ex);
+                    log.info("Could not resolve placeholder '" + placeholder + "' in [" + text + "]: " + ex);
                 }
                 startIndex = buf.indexOf(PLACEHOLDER_PREFIX, nextIndex);
             } else {

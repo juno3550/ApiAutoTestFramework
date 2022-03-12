@@ -1,3 +1,4 @@
+# ApiObjectModel
 # 查询所有部门
 name: listDepartment
 formalParam: ["departmentId"]

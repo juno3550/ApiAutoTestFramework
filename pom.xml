@@ -110,7 +110,7 @@
                             "**/*TestCase.java"
                             如果现有测试文件不符合以上命名，可以在 pom.xml 添加自定义规则
                         -->
-                        <include>**/**.java</include>
+                        <include>**/*Test.java</include>
                     </includes>
                     <!-- 在target目录下自动生成原生的测试结果目录：/allure-results -->
                     <systemProperties>

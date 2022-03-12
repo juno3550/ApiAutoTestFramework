@@ -1,3 +1,4 @@
+# ApiObjectModel
 # 更新部门
 name: updateDepartment
 formalParam: ["departmentId","name","name_en"]
