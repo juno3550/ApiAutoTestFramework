@@ -1,0 +1,15 @@
+---
+name: "gettoken"
+url: null
+post: null
+get: "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ww5ef451bf006ec894&corpsecret=EcEIog2OJ8AtO7PDaqt_yuVZS3NeYF3kcko9Vd6i9EE"
+requestMethod: "get"
+contentType: null
+body: null
+query:
+  corpid: "ww5ef451bf006ec894"
+  corpsecret: "EcEIog2OJ8A tO7PDaqt_yuVZS3NeYF3kcko9Vd6i9EE"
+headers: null
+formalParam: null
+caseVariables: {}
+response: null

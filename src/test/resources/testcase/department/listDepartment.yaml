@@ -1,0 +1,23 @@
+#ApiTestCaseModel
+name: 查看部门
+description: 查看部门
+module: 部门模块
+steps:
+  - apiName: getToken
+    description: 获取 token
+    actualParameter: ["ww5ef451bf006ec894","EcEIog2OJ8AtO7PDaqt_yuVZS3NeYF3kcko9Vd6i9EE"]
+    saveGlobal:
+      accesstoken: access_token
+    asserts:
+      - key: errcode
+        matcher: equalTo
+        expect: 0
+        reason: 'getToken错误码'
+  - apiName: listDepartment
+    description: 验证查看现有部门
+    actualParameter: ["${departmentId}"]
+    asserts:
+      - key: errcode
+        matcher: equalTo
+        expect: 0
+        reason: '查询部门错误码'
